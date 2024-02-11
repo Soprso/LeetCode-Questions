@@ -46,7 +46,7 @@ ExchangeCharacters exc = new ExchangeCharacters();
 
 OperationonIntegers op = new OperationonIntegers();
 //Console.WriteLine(op.SameLastDigit(123,456));
-int[] ints = { 10, 20, -30, -40, 50 };
+int[] ints = {23, 15, 2, 3, 4, 15, 11 };
 //Console.WriteLine(op.CheckElementPresent(ints,2));
 //Console.WriteLine(op.CheckSeqPresent(ints));
 //Console.WriteLine(op.CountTwoFives(ints));
@@ -64,9 +64,10 @@ int[] ints = { 10, 20, -30, -40, 50 };
 //op.PrintRightTriangleIncreasedNumber(4);
 //Console.WriteLine(op.CheckNumofThreeGreaterThanFive(ints));
 //Console.WriteLine(op.question126(ints));
-int []res=op.ShiftElementRight(ints);
-foreach (int i in res)
-{
-    Console.Write(i+" ");
-}
+//int []res=op.ShiftElementRight(ints);
+//foreach (int i in res)
+//{
+//    Console.Write(i+" ");
+//}
+Console.WriteLine(op.CompareAverageValue(ints));
 

@@ -216,5 +216,27 @@ namespace DSA
             return shiftright;
         }
 
+        public int CompareAverageValue(int[] arrint )
+        {
+            int avgfirst = 0;
+            int avgsecond = 0;
+            int sum = 0;
+            for (int i=0;i<arrint.Length/2;i++)
+            {
+
+                sum+= arrint[i];
+            }
+            avgfirst=sum/(arrint.Length/2);
+
+            int secsum = 0;
+            for(int i=arrint.Length/2;i<arrint.Length;i++)
+            {
+                secsum+= arrint[i];
+            }
+            avgsecond= secsum/(arrint.Length/2);
+
+            return avgfirst>avgsecond? avgfirst:avgsecond;
+        }
+
     }
 }
