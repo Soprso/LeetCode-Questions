@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -236,6 +237,164 @@ namespace DSA
             avgsecond= secsum/(arrint.Length/2);
 
             return avgfirst>avgsecond? avgfirst:avgsecond;
+        }
+
+        public int[] question140 (int[] arrint, int givenlength)
+        {
+            
+            List<int> resultint= new List<int>();
+            for(int i=0;i<arrint.Length;i++)
+            {
+                if (arrint[i]%2!=0 && resultint.Count<givenlength)
+                {
+                    resultint.Add(arrint[i]);
+                }
+            }
+            return resultint.ToArray(); 
+        }
+
+        public bool IsPalindrome(int x)
+        {
+            string str= x.ToString();
+            char[] reverse = new char[str.Length];
+            for(int i=0;i<str.Length;i++)
+            {
+                reverse[i] = str[str.Length-1-i];
+            }
+            string rev = new string(reverse);
+            if(str.Equals(rev))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public int RomanToInt(string s)
+        {
+            Dictionary<char,int> dict = new Dictionary<char, int> { { 'I', 1 }, { 'V', 5 }, { 'X', 10 }, { 'L', 50 }, { 'C', 100 }, { 'D', 500 }, { 'M',1000} };
+            s = s.Replace("IV","IIII");
+            s = s.Replace("IX", "VIIII");
+            s = s.Replace("XL", "XXXX");
+            s = s.Replace("XC", "LXXXX");
+            s = s.Replace("CD", "CCCC");
+            s = s.Replace("CM", "DCCCC");
+
+            int result = 0;
+            
+            foreach(char ch in s)
+            {
+                result += dict[ch];
+            }
+
+            return result;
+        }
+
+        public int RemoveDuplicates(int[] nums)
+        {
+            int duplictr = 0;
+            //int j = 0;
+            List<int> duplivalues = new List<int>();   
+           for(int i=0;i<nums.Length;i++)
+            {
+                for(int j =i+1;j<nums.Length;j++)
+                {
+                    if (nums[i] != nums[j] && !duplivalues.Contains(nums[i]))
+                    {
+                        duplivalues.Add(nums[i]);
+                    }
+                }
+               
+            }
+            if (!duplivalues.Contains(nums[nums.Length - 1]))
+            {
+                duplivalues.Add(nums[nums.Length - 1]);
+            }
+            //foreach (int i in duplivalues)
+            //{
+            //    Console.Write(i+ " ");
+            //}
+            //Console.WriteLine();
+            return duplivalues.Count;
+        }
+
+        public int RemoveElement(int[] nums, int val)
+        {
+            int ctr = 0;
+            for(int i=0;i<nums.Length;i++)
+            {
+                if (nums[i]==val)
+                {
+                    ctr++;
+                }
+            }
+            return nums.Length-ctr;
+        }
+
+        public int SearchInsert(int[] nums, int target)
+        {
+            int result = 0;
+            int found = 0;
+            if(nums.Length==1)
+            {
+                if (nums[0] < target)
+                {
+                    result = 1;
+                }
+                else
+                    result = 0;
+            }
+            for(int i=0;i<nums.Length;i++)
+            {
+                if ((nums[i]==target))
+                {
+                    result= i;
+                    found = 1;
+                }
+               
+            }
+            if (found == 0) 
+            {
+                for(int i=0;i<nums.Length-1;i++)
+                {
+                    if ((target > nums[i] && target < nums[i + 1]))
+                    {
+                        result = i+1;
+                        break;
+                    }
+                    else if (target < nums[i])
+                    {
+                        result = i;
+                        break;
+                    }
+                    else if (target > nums[nums.Length-1])
+                    {
+                        result = nums.Length;
+                    }
+
+                }
+            }
+            return result;
+        }
+
+        public int[] PlusOne(int[] digits)
+        {
+           for(int i=digits.Length-1;i>=0;i--)
+            {
+                if (digits[i]<9)
+                {
+                    digits[i] += 1;
+                    return digits;
+                }
+                else
+                {
+                    digits[i] = 0;
+                }
+
+            }
+            int[] result= new int[digits.Length+1];
+            result[0] = 1;
+            return result;  
         }
 
     }

@@ -227,5 +227,162 @@ namespace DSA
             else
                 return sample1;
         }
+
+        public int question136(string[] sample1, int givenlength)
+        {
+            int stringctr = 0;
+            for(int i = 0;i<sample1.Length;i++)
+            {
+                if (sample1[i].Length==givenlength)
+                {
+                    stringctr++;
+                }
+            }
+            return stringctr;
+        }
+
+        public string[] question138(string[] sample, int givennum)
+        {
+            List<string> res= new List<string>();
+            for(int i=0;i<sample.Length;i++)
+            {
+                if(sample[i].Length == givennum)
+                {
+                    res.Add(sample[i]);
+                }
+            }
+            return res.ToArray();   
+        }
+
+        public List<string> question143(List<string> sample)
+        {
+            IEnumerable<string> res = sample.Select(x => "#" + x + "#");
+            return res.ToList();
+        }
+
+        public string superReducedString(string s)
+        {
+            //char[] sarray = s.ToLower().ToArray();
+
+            StringBuilder sb = new StringBuilder(); 
+
+            int i = 0;
+
+            while(i<s.Length)
+            {
+                if ((i==s.Length-1) || s[i] != s[i+1])
+                {
+                    sb.Append(s[i]);
+                    i++;
+                }
+                else
+                {
+                    i += 1;
+                }
+            }
+
+            if(sb.Length<1)
+            {
+                return "Empty String";
+            }
+            else
+                return sb.ToString();
+        }
+
+        public Dictionary<char, int> returnoccurrence(string str)
+        {
+            Dictionary<char,int >   charcount=new Dictionary<char,int>();
+
+            foreach(char c in str)
+            {
+                if (charcount.ContainsKey(c))
+                {
+                    charcount[c]++;
+                }
+                else
+                {
+                    charcount[c] = 1;
+                }
+            }
+            return charcount;
+        }
+
+        public string LongestCommonPrefix(string[] strs)
+        {
+            if (strs.Length == 1)
+                return strs[0];
+
+            var prefixString = "";
+
+            if (strs == null || strs.Length == 0)
+                return prefixString;
+
+            // Go through all the letters of the first word
+            for (int i = 0; i < strs[0].Length; i++)
+            {
+
+                // Go through each of the remaining words
+                foreach (string str in strs)
+                {
+                    // If i is higher then the length of the word
+                    // there is no longer a prefix to match
+                    if (i > str.Length - 1)
+                        return prefixString;
+
+                    // If the i-th letter of the string doesn't match the i-th 
+                    // letter of the first word we've reached the end of the
+                    // common prefix
+                    if (strs[0][i] != str[i])
+                        return prefixString;
+                }
+
+                // If we make it through the inner foreach all of the 
+                prefixString += strs[0][i];
+            }
+
+
+            return prefixString;
+        }
+
+        public int StrStr(string haystack, string needle)
+        {
+            //return haystack.IndexOf(needle);
+            if(haystack==needle)
+            {
+                return 0;
+            }
+            if (haystack.Length<needle.Length)
+            {
+                return -1;
+            }
+            else 
+            {
+                for (int i = 0; i < haystack.Length - needle.Length+1; i++)
+                {
+                    if (haystack.Substring(i, needle.Length) == needle)
+                    {
+                        return i;
+                    }
+                }
+            }
+            
+            return -1;
+        }
+
+        public int LengthOfLastWord(string s)
+        {
+            string[] sarray = s.Split(' ');
+            int len = 0;
+            for(int i=sarray.Length-1;i>=0;i--)
+            {
+                if (sarray[i]!="")
+                {
+                    len = sarray[i].Length;
+                    break;
+                }
+            }
+            return len;
+        }
+
     }
 }

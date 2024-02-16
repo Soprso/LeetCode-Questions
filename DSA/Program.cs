@@ -1,4 +1,5 @@
 ﻿using DSA;
+using System.Net;
 
 //ReverseString obj=new ReverseString();
 //string reversed = obj.stringreverse("Hello World");
@@ -13,6 +14,10 @@
 //string res = rat.RemoveCharacterAtIndex("Python", 1);
 
 ExchangeCharacters exc = new ExchangeCharacters();
+
+//Console.WriteLine(exc.LengthOfLastWord("luffy is still joyboy"));
+
+//Console.WriteLine(exc.StrStr("abc","c"));
 //Console.WriteLine(exc.ExchangeFirstLast("bc"));
 //Console.WriteLine(exc.CreateNewStringFromExisting("y"));
 //Console.WriteLine(exc.CheckZinString("zzzz"));
@@ -29,6 +34,26 @@ ExchangeCharacters exc = new ExchangeCharacters();
 //Console.WriteLine(exc.CountAlphaNumerSpecial("ghoshsoumyadeep3@gmail.com"));
 //Console.WriteLine(exc.WithoutFirstandLastChar("Pythio"));
 //Console.WriteLine(exc.CreateStringatGivenIndex("python",2));
+//string[] stringarr = { "flower", "flow", "floght" };
+//string[] res = exc.question138(stringarr, 1);
+////Console.WriteLine("Number of strings :"+exc.question136(stringarr,1));
+//foreach(string i in res)
+//{
+//    Console.Write(i+" ");
+//}
+
+//Console.WriteLine(exc.superReducedString("aaabccddd"));
+
+//Console.WriteLine(exc.LongestCommonPrefix(stringarr));
+//Console.WriteLine(exc.IsValid("(){}}{"));
+
+//Dictionary<char, int> charcount = exc.returnoccurrence("hello world");
+
+//foreach (var kvp in charcount)
+//{
+//    Console.WriteLine(kvp.Key+" : "+kvp.Value);
+//}
+//Console.WriteLine(exc.LengthOfLongestSubstring("pwwkew"));
 
 
 //FourCopies fr = new FourCopies();
@@ -45,8 +70,14 @@ ExchangeCharacters exc = new ExchangeCharacters();
 //Console.WriteLine(largestnum.LargestofThreeNumbers(1111,4,10));
 
 OperationonIntegers op = new OperationonIntegers();
+int[] ints = { 9, 8, 7, 6, 5, 4};
+int [] resultarr=op.PlusOne(ints);
+foreach(int i in resultarr)
+{
+    Console.Write(i+" ");
+}
 //Console.WriteLine(op.SameLastDigit(123,456));
-int[] ints = {23, 15, 2, 3, 4, 15, 11 };
+
 //Console.WriteLine(op.CheckElementPresent(ints,2));
 //Console.WriteLine(op.CheckSeqPresent(ints));
 //Console.WriteLine(op.CountTwoFives(ints));
@@ -69,5 +100,17 @@ int[] ints = {23, 15, 2, 3, 4, 15, 11 };
 //{
 //    Console.Write(i+" ");
 //}
-Console.WriteLine(op.CompareAverageValue(ints));
+//Console.WriteLine(op.CompareAverageValue(ints));
+
+//int[] result = op.question140(ints, 3);
+//foreach(int i in result)
+//{
+//    Console.Write(i + " "); 
+//}
+
+//Console.WriteLine(op.IsPalindrome(-121));
+//Console.WriteLine(op.RomanToInt("MCMXCIV"));
+//Console.WriteLine(op.RemoveDuplicates(ints));
+//Console.WriteLine(op.SearchInsert(ints,2));
+
 
