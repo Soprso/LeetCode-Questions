@@ -1,4 +1,6 @@
-Contains solved questions from :- https://www.w3resource.com/csharp-exercises/basic-algo/index.php
+Contains solved questions from :- https://www.w3resource.com/csharp-exercises/basic-algo/index.php 
+
+and Leetcode
 
 I am trying to solve for most of the questions. Good for getting started to c#.
 
