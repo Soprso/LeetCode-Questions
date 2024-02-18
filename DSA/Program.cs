@@ -15,6 +15,8 @@ using System.Net;
 
 ExchangeCharacters exc = new ExchangeCharacters();
 
+Console.WriteLine(exc.AddBinary("0", "1"));
+
 //Console.WriteLine(exc.LengthOfLastWord("luffy is still joyboy"));
 
 //Console.WriteLine(exc.StrStr("abc","c"));
@@ -70,12 +72,14 @@ ExchangeCharacters exc = new ExchangeCharacters();
 //Console.WriteLine(largestnum.LargestofThreeNumbers(1111,4,10));
 
 OperationonIntegers op = new OperationonIntegers();
-int[] ints = { 9, 8, 7, 6, 5, 4};
-int [] resultarr=op.PlusOne(ints);
-foreach(int i in resultarr)
-{
-    Console.Write(i+" ");
-}
+//int[] ints = { 9, 8, 7, 6, 5, 4};
+//int [] resultarr=op.PlusOne(ints);
+//foreach(int i in resultarr)
+//{
+//    Console.Write(i+" ");
+//}
+
+
 //Console.WriteLine(op.SameLastDigit(123,456));
 
 //Console.WriteLine(op.CheckElementPresent(ints,2));

@@ -384,5 +384,44 @@ namespace DSA
             return len;
         }
 
+       public string AddBinary(string a, string b)
+        {
+            int[] num1 = a.Select(x => x - '0').ToArray();
+            int[] num2 = b.Select(x => x - '0').ToArray();
+            int n1 = 0;
+            int n2=0;
+            //List<int> listrem = new List<int>();
+
+            for(int i=num1.Length-1;i>=0;i--)
+            {
+                n1 += num1[i] * (int)Math.Pow(2, (num1.Length - 1 - i));
+            }
+
+            for (int i = num2.Length - 1; i >= 0; i--)
+            {
+                n2 += num2[i] * (int)Math.Pow(2, (num2.Length - 1 - i));
+            }
+
+            int result= n1+ n2;
+            int sum = result;
+
+            if(result==0)
+            {
+                return "0";
+            }
+
+            string res = "";
+            while(result>0)
+            {
+                int remainder=result%2;
+                res= remainder+res;
+                result = result / 2;
+            }
+
+            
+
+            return res;
+        }
+
     }
 }
